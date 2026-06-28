@@ -1,0 +1,50 @@
+<%-- navbar.jspf --%>
+<style>
+    .navbar {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 35px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav-btn {
+        text-decoration: none;
+        color: #4a90e2;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border: 1px solid #4a90e2;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+        background-color: #4a90e2;
+        color: white;
+    }
+
+    .nav-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333333;
+    }
+</style>
+
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="index.html" class="nav-btn">Create Profile</a>
+        <a href="view-all.jsp" class="nav-btn">View All Profile</a>
+    </div>
+    <div class="nav-title">
+        Personal Profile Generator
+    </div>
+</nav>

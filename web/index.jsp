@@ -3,12 +3,10 @@
 <head> 
     <title>Personal Profile Generator</title>
     <style>
-        /** 
-        --FOR FUTURE USE--
-        
+        /** --FOR FUTURE USE--
         Color pallete used:
             - DeepCool inspired color accent:
-            - Teal / Cyan Background: #0A7D82 to #109B9F (DeepCool brand teal accent)
+            - Teal / Cyan Background: #0A7D82 to #109B9F
             - Pure White (Hardware & Text): #FFFFFF
             - Off-White / Light Gray (Chassis Highlights): #EAEAEA
             - Dark Navy Blue (Text Background Shadow): #081E26
@@ -17,13 +15,23 @@
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: #5cc7cc;
+            margin: 0;           
+            padding: 0;         
+            min-height: 100vh;     
+            box-sizing: border-box; 
+            /* Change layout to stack elements vertically */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NEW: This wrapper takes the remaining space and centers the form */
+        .main-container {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0;           
-            padding: 35px;         
-            min-height: 100vh;     
-            box-sizing: border-box; 
+            padding: 35px;
+            box-sizing: border-box;
         }
 
         form {
@@ -98,24 +106,25 @@
     </style>
 </head> 
 <body> 
-    <%@ include file="WEB-INF/navbar.jspf" %>
-    <%@ include file="components/navbar.jspf" %>
-    
-    <form action="ProfileController" method="post"> 
-        <h2>Insert your personal details</h2> 
-        <label>Full Name:</label>
-        <input type="text" name="fullname" required>
-        <label>Student ID:</label>
-        <input type="text" name="studentid" required pattern="[0-9]{10,}">
-        <label>Email:</label>
-        <input type="email" name="email" required>
-        <label>Academic Program:</label>
-        <input type="text" name="program" required>
-        <label>Hobbies:</label>
-        <input type="text" name="hobbies">
-        <label>Professional Bio:</label>
-        <textarea name="bio" rows="4"></textarea> 
-        <input type="submit" value="Register"> 
-    </form> 
+    <%@ include file="WEB-INF/jspf/navbar.jspf" %>
+
+    <div class="main-container">
+        <form action="ProfileController" method="post"> 
+            <h2>Insert your personal details</h2> 
+            <label>Full Name:</label>
+            <input type="text" name="fullname" required>
+            <label>Student ID:</label>
+            <input type="text" name="studentid" required pattern="[0-9]{10,}">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <label>Academic Program:</label>
+            <input type="text" name="program" required>
+            <label>Hobbies:</label>
+            <input type="text" name="hobbies">
+            <label>Professional Bio:</label>
+            <textarea name="bio" rows="4"></textarea> 
+            <input type="submit" value="Register"> 
+        </form> 
+    </div>
 </body> 
 </html>
