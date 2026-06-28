@@ -146,7 +146,7 @@
         </div>
         
         <a href="index.html" class="btn-back">Back to Form</a> 
-        <a href="ProfileController" class="btn-view-all">View All Profiles</a>
+        <a href="view-all.jsp" class="btn-view-all">View All Profiles</a>
     </div>
 </body> 
 </html>
