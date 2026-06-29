@@ -41,7 +41,7 @@
 
 <nav class="navbar">
     <div class="nav-links">
-        <a href="index.html" class="nav-btn">Create Profile</a>
+        <a href="index.jsp" class="nav-btn">Register New Profile</a>
         <a href="view-all.jsp" class="nav-btn">View All Profile</a>
     </div>
     <div class="nav-title">

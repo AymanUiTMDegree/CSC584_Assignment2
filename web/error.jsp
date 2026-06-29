@@ -7,51 +7,59 @@
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: #5cc7cc;
+            margin: 0;           
+            padding: 0;         
+            min-height: 100vh;     
+            box-sizing: border-box; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-container {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0;           
-            padding: 35px;         
-            min-height: 100vh;     
-            box-sizing: border-box; 
+            padding: 35px;
+            box-sizing: border-box;
         }
 
         .profile-card {
             background-color: #ffffff;
-            padding: 35px;
+            padding: 40px 35px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             width: 100%;
             max-width: 450px;
             box-sizing: border-box;
+            text-align: center;
+        }
+
+        .error-icon {
+            font-size: 50px;
+            color: #e74c3c;
+            margin-bottom: 15px;
+            line-height: 1;
         }
 
         h2 {
-            text-align: center;
-            color: #e74c3c;
             margin-top: 0;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
+            color: #2c3e50;
             font-weight: 700;
-            font-size: 22px;
+            font-size: 24px;
         }
 
         .error-message {
-            color: #555555;
+            background-color: #fdf2f2;
+            border-left: 4px solid #e74c3c;
+            color: #c0392b;
             font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
+            font-weight: 600;
+            padding: 15px;
+            border-radius: 4px;
             margin-bottom: 30px;
-            color: #333333;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        li {
-            margin-bottom: 8px;
+            text-align: left;
         }
 
         .btn-back {
@@ -75,17 +83,19 @@
     </style>
 </head> 
 <body> 
-    <div class="profile-card">
-        <h2>Profile Generation Failed!</h2> 
-        <div class="error-message">
-            Please ensure: 
+    <%@ include file="WEB-INF/jspf/navbar.jspf" %>
+
+    <div class="main-container">
+        <div class="profile-card">
+            <div class="error-icon">⚠️</div>
+            <h2>Registration Failed</h2> 
+            
+            <div class="error-message">
+                The student profile you entered already exists in the database.
+            </div>
+            
+            <a href="index.jsp" class="btn-back" onclick="window.history.back(); return false;">Try Again</a>
         </div>
-        <ul> 
-            <li>All required fields are filled</li>
-            <li>Student ID contains numbers only and in valid format</li> 
-            <li>Email contains @ symbol</li> 
-        </ul> 
-        <a href="index.html" class="btn-back">Try Again</a> 
     </div>
 </body> 
 </html>

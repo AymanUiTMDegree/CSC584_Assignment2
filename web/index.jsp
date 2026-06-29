@@ -19,12 +19,10 @@
             padding: 0;         
             min-height: 100vh;     
             box-sizing: border-box; 
-            /* Change layout to stack elements vertically */
             display: flex;
             flex-direction: column;
         }
 
-        /* NEW: This wrapper takes the remaining space and centers the form */
         .main-container {
             flex: 1;
             display: flex;
